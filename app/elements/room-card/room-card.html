@@ -11,20 +11,20 @@
 
 
 <dom-module id="room-card">
-    <template>
-        <style include="shared-styles"></style>
-        <style is="custom-style">
+<template>
+    <style include="shared-styles"></style>
+    <style is="custom-style">
             paper-card {
-                padding-bottom: 10px;
-                width: calc(98% - 46px);
-                margin-bottom: 10px;
-                margin-top: 10px;
-                margin-left: 30px;
-                margin-right: 30px;          
+                --paper-card-header: {
+                    @apply(--layout-vertical);
+                    @apply(--layout-center);
+                    border-bottom: 1px solid #E8E8E8;
+                };
+                margin-top: 15px;
+                width: 100%;
             }
-            paper-button.room-card {
-                background: #448aff;
-                color: #ffffff;
+            .room-button {
+                width: 50%;
             }
             #content {
                 @apply(--layout-horizontal);
@@ -35,48 +35,55 @@
             .flex-child-2 {
                 @apply(--layout-flex-2)
             }
+            .divider{
+                position:absolute;
+                left:50%;
+                top:10%;
+                bottom:10%;
+                border-left: 1px solid #E8E8E8;
+            }
         </style>
         <div class="room-card">
-            <paper-card heading="{{ title }}" elevation="3">
-                <div class="card-content">
-                    <div id="content">
-                        <div class="flex-child-2">
-                            <iron-icon icon="maps:map"></iron-icon> {{ location }}    
-                        </div>
-                        <div class="flex-child">
-                            {{ date }}    
-                        </div>                
+            <paper-card heading="{{ title }}" elevation="1">
+            <div class="card-content">
+                <div id="content">
+                    <div class="flex-child-2">
+                        <iron-icon icon="maps:map"></iron-icon> {{ location }}    
                     </div>
-                    <div>
-                        <iron-icon icon="social:group"></iron-icon> {{ number }}
-                    </div>
-                    <div>
-                        <iron-icon icon="social:person"></iron-icon> {{ owner }}                        
-                    </div>
+                    <div class="flex-child">
+                        {{ date }}    
+                    </div>                
                 </div>
-                <div class="card-action">
-                    <paper-button>Info</paper-button>
-                    <paper-button>Join</paper-button>
+                <div>
+                    <iron-icon icon="social:group"></iron-icon> {{ number }}
                 </div>
-            </paper-card>
-        </div>
-    </template>
+                <div>
+                    <iron-icon icon="social:person"></iron-icon> {{ owner }}                        
+                </div>
+            </div>
+            <div class="card-actions">
+                <paper-button class="room-button">Info</paper-button>
+                <paper-button class="room-button divider">Join</paper-button>
+            </div>
+        </paper-card>
+    </div>
+</template>
 
-    <script>
-        (function() {
-            'use-strict';
+<script>
+    (function() {
+        'use-strict';
 
-            Polymer({
-                is : 'room-card',
+        Polymer({
+            is : 'room-card',
 
-                properties : {
-                    title : String,
-                    location : String,
-                    date : String,
-                    number : String,
-                    owner : String,
-                }
-            });
-        })();
-    </script>
+            properties : {
+                title : String,
+                location : String,
+                date : String,
+                number : String,
+                owner : String,
+            }
+        });
+    })();
+</script>
 </dom-module>
