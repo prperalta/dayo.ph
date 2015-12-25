@@ -51,6 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/lobby', function() {
       app.route = 'lobby';
+      console.log('lobby');
     });
 
     page('/users/:name', function(data) {
@@ -65,6 +66,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/userprofile', function() {
       app.route = 'userprofile';
+      console.log('users');
     });
 
     // 404
