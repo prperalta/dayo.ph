@@ -1,0 +1,271 @@
+<link rel="import" href="/static/bower_components/polymer/polymer.html">
+
+<dom-module id="user-profile">
+  <template>
+    <style>
+      paper-tabs {
+        --paper-tabs-selection-bar-color: #448AFF;
+        background-color: #FFE0B2;
+      }
+      .user-body {
+        font-family: "Roboto", sans-serif;
+      }
+      .profile-container img {
+        height: 100px;
+        width: auto;
+      }
+      .profile-container ul li {
+        list-style-type: none;
+      }
+      
+      .avatar {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #ccc;
+    }
+    
+    .blue {
+      background-color: var(--paper-light-blue-300);
+    }
+    .red {
+      background-color: var(--paper-red-300);
+    }
+    .orange {
+      background-color: var(--paper-amber-300);
+    }
+    .green {
+      background-color: var(--paper-green-300);
+    }
+    
+    .vote-count {
+      margin-right: 0;
+    }
+    
+    .content {
+      line-height: 40px;
+      text-align: center;
+    }
+    </style>
+    
+    <div class="user-body">
+      <paper-tabs id="scrollableTabs" noink selected="{{selected}}">
+        <paper-tab>USER</paper-tab>
+        <paper-tab>BASKETBALL</paper-tab>
+        <paper-tab>VOLLEYBALL</paper-tab>
+      </paper-tabs>
+
+      <iron-pages selected="{{selected}}">
+        <div>
+          <div class="profile-container">
+            <paper-icon-item>
+              <div class="avatar blue" item-icon></div>
+              <paper-item-body two-line>
+                <div>lex martinez</div>
+                <div secondary>name</div>
+              </paper-item-body>
+            </paper-icon-item>
+            <paper-icon-item>
+              <iron-icon icon="icons:accessibility" item-icon></iron-icon>
+              <paper-item-body two-line>
+                <div>24</div>
+                <div secondary>age</div>
+              </paper-item-body>
+            </paper-icon-item>
+            <paper-icon-item>
+              <iron-icon icon="icons:accessibility" item-icon></iron-icon>
+              <paper-item-body two-line>
+                <div>190</div>
+                <div secondary>pounds</div>
+              </paper-item-body>
+            </paper-icon-item>
+            <paper-icon-item>
+              <iron-icon icon="icons:accessibility" item-icon></iron-icon>
+              <paper-item-body two-line>
+                <div>5'10</div>
+                <div secondary>height</div>
+              </paper-item-body>
+            </paper-icon-item>
+            <paper-icon-item>
+              <iron-icon icon="communication:phone" item-icon></iron-icon>
+              <paper-item-body two-line>
+                <div>(+63) 9173247246</div>
+                <div secondary>mobile</div>
+              </paper-item-body>
+            </paper-icon-item>
+            <paper-icon-item>
+              <iron-icon icon="social:location-city" item-icon></iron-icon>
+              <paper-item-body two-line>
+                <div>quezon city, philippines</div>
+                <div secondary>location</div>
+              </paper-item-body>
+            </paper-icon-item>
+            <paper-item style="font-size: 11px">
+              <a href="">https://www.facebook.com/alex.martinez1012</a>
+            </paper-item>
+            <paper-icon-item>
+          </div>
+        </div>
+        
+        <div>
+          <paper-item>
+            <paper-item-body two-line>
+              <div>3248</div>
+              <div secondary>games played</div>
+            </paper-item-body>
+            <paper-item>
+              "TRIGGERMAN"
+            </paper-item>
+          </paper-item>
+          <paper-icon-item>
+            <div class="avatar green" item-icon><div class="content">MVP</div></div>
+            x4
+          </paper-icon-item>
+          <paper-icon-item>
+            <div class="avatar red" item-icon><div class="content">3PT</div></div>
+            x2032
+          </paper-icon-item>
+          <paper-icon-item>
+            <div class="avatar orange" item-icon><div class="content">DEF</div></div>
+            x73
+          </paper-icon-item>
+        </div>
+        
+        <div>
+          <paper-item>
+            <paper-item-body two-line>
+              <div>2</div>
+              <div secondary>games played</div>
+            </paper-item-body>
+            <paper-item>
+              "NEWBIE"
+            </paper-item>
+          </paper-item>
+          <paper-icon-item>
+            <div class="avatar green" item-icon><div class="content">NI</div></div>
+            x1
+          </paper-icon-item>
+        </div>
+      </iron-pages>
+    </div>
+    
+    <!-- <div class="user-body">
+      <paper-scroll-header-panel condenses keep-condensed-header fixed>
+        <div class="paper-header">
+          <paper-tabs id="scrollableTabs" noink selected="{{selected}}">
+            <paper-tab>USER</paper-tab>
+            <paper-tab>BASKETBALL</paper-tab>
+            <paper-tab>VOLLEYBALL</paper-tab>
+          </paper-tabs>
+        </div>
+
+        <div class="content">
+          <iron-pages selected="{{selected}}">
+            <div>
+              <div class="profile-container">
+                <paper-icon-item>
+                  <div class="avatar blue" item-icon></div>
+                  <paper-item-body two-line>
+                    <div>lex martinez</div>
+                    <div secondary>name</div>
+                  </paper-item-body>
+                </paper-icon-item>
+                <paper-icon-item>
+                  <iron-icon icon="icons:accessibility" item-icon></iron-icon>
+                  <paper-item-body two-line>
+                    <div>24</div>
+                    <div secondary>age</div>
+                  </paper-item-body>
+                </paper-icon-item>
+                <paper-icon-item>
+                  <iron-icon icon="icons:accessibility" item-icon></iron-icon>
+                  <paper-item-body two-line>
+                    <div>190</div>
+                    <div secondary>pounds</div>
+                  </paper-item-body>
+                </paper-icon-item>
+                <paper-icon-item>
+                  <iron-icon icon="icons:accessibility" item-icon></iron-icon>
+                  <paper-item-body two-line>
+                    <div>5'10</div>
+                    <div secondary>height</div>
+                  </paper-item-body>
+                </paper-icon-item>
+                <paper-icon-item>
+                  <iron-icon icon="communication:phone" item-icon></iron-icon>
+                  <paper-item-body two-line>
+                    <div>(+63) 9173247246</div>
+                    <div secondary>mobile</div>
+                  </paper-item-body>
+                </paper-icon-item>
+                <paper-icon-item>
+                  <iron-icon icon="social:location-city" item-icon></iron-icon>
+                  <paper-item-body two-line>
+                    <div>quezon city, philippines</div>
+                    <div secondary>location</div>
+                  </paper-item-body>
+                </paper-icon-item>
+                <paper-item style="font-size: 11px">
+                  <a href="">https://www.facebook.com/alex.martinez1012</a>
+                </paper-item>
+                <paper-icon-item>
+              </div>
+            </div>
+            
+            <div>
+              <paper-item>
+                <paper-item-body two-line>
+                  <div>3248</div>
+                  <div secondary>games played</div>
+                </paper-item-body>
+                <paper-item>
+                  "TRIGGERMAN"
+                </paper-item>
+              </paper-item>
+              <paper-icon-item>
+                <div class="avatar green" item-icon><div class="content">MVP</div></div>
+                x4
+              </paper-icon-item>
+              <paper-icon-item>
+                <div class="avatar red" item-icon><div class="content">3PT</div></div>
+                x2032
+              </paper-icon-item>
+              <paper-icon-item>
+                <div class="avatar orange" item-icon><div class="content">DEF</div></div>
+                x73
+              </paper-icon-item>
+            </div>
+            
+            <div>
+              <paper-item>
+                <paper-item-body two-line>
+                  <div>2</div>
+                  <div secondary>games played</div>
+                </paper-item-body>
+                <paper-item>
+                  "NEWBIE"
+                </paper-item>
+              </paper-item>
+              <paper-icon-item>
+                <div class="avatar green" item-icon><div class="content">NI</div></div>
+                x1
+              </paper-icon-item>
+            </div>
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </div> -->
+    
+  </template>
+  
+  <script>
+    Polymer({
+      is: "user-profile",
+      properties: {
+        selected: String,
+      },
+    });
+  </script>
+</dom-module>

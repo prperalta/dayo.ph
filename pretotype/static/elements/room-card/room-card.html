@@ -1,0 +1,89 @@
+<link rel="import" href="/static/bower_components/polymer/polymer.html">
+<link rel="import" href="/static/bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<link rel="import" href="/static/bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="/static/bower_components/iron-icons/social-icons.html">
+<link rel="import" href="/static/bower_components/iron-icons/maps-icons.html">
+
+<link rel="import" href="/static/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/static/bower_components/paper-card/paper-card.html">
+<link rel="import" href="/static/bower_components/paper-item/paper-item.html">
+
+
+<dom-module id="room-card">
+<template>
+    <style include="shared-styles"></style>
+    <style is="custom-style">
+            paper-card {
+                --paper-card-header: {
+                    @apply(--layout-vertical);
+                    @apply(--layout-center);
+                    border-bottom: 1px solid #E8E8E8;
+                };
+                margin-top: 15px;
+                width: 100%;
+            }
+            .room-button {
+                width: 50%;
+            }
+            #content {
+                @apply(--layout-horizontal);
+            }
+            .flex-child {
+                @apply(--layout-flex);
+            }
+            .flex-child-2 {
+                @apply(--layout-flex-2)
+            }
+            .divider{
+                position:absolute;
+                left:50%;
+                top:10%;
+                bottom:10%;
+                border-left: 1px solid #E8E8E8;
+            }
+        </style>
+        <div class="room-card">
+            <paper-card heading="{{ title }}" elevation="1">
+            <div class="card-content">
+                <div id="content">
+                    <div class="flex-child-2">
+                        <iron-icon icon="maps:map"></iron-icon> {{ location }}    
+                    </div>
+                    <div class="flex-child">
+                        {{ date }}    
+                    </div>                
+                </div>
+                <div>
+                    <iron-icon icon="social:group"></iron-icon> {{ number }}
+                </div>
+                <div>
+                    <iron-icon icon="social:person"></iron-icon> {{ owner }}                        
+                </div>
+            </div>
+            <div class="card-actions">
+                <paper-button class="room-button">Info</paper-button>
+                <paper-button class="room-button divider">Join</paper-button>
+            </div>
+        </paper-card>
+    </div>
+</template>
+
+<script>
+    (function() {
+        'use-strict';
+
+        Polymer({
+            is : 'room-card',
+
+            properties : {
+                title : String,
+                location : String,
+                date : String,
+                number : String,
+                owner : String,
+            }
+        });
+    })();
+</script>
+</dom-module>
